@@ -3,7 +3,12 @@ title: 关于我
 type: about
 ---
 
+---
 hello, nice to meet you!
+
+目前大三在读，找工作ing,大佬有兴趣请联系，邮箱：3199455871@qq.com
+
+---
 
 # 求职简历
 

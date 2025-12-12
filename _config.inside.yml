@@ -28,29 +28,15 @@ appearance:
   font:
     # Url of font css file
     # Below is a font set containing Baloo Bhaijaan, Josefin Sans, Montserrat and Inconsolata from Google Fonts.
-    url: //fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat
-
-    # Base font which applied to body
-    base: "'Josefin Sans', 'PingFang SC'"
-    # Sidebar author font, fallback to `base`
+    # 使用系统字体，避免网络字体加载问题
+    url:
+    base: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif"
     logo:
-    # Sidebar menu font, fallback to `base`
-    menu: "Baloo Bhaijaan"
-    # Font for:
-    # - percentage on the fab button
-    # - month text on archives page
-    # - count
-    # - pager
-    # - toc index
-    # - category pill
-    # fallback to `base`
-    label: Montserrat
-    # Headline(h1, h2, h3, h4, h5, h6) font, fallback to `base`
-    heading:
-    # Code and code block
-    code: Inconsolata, monospace
-    # Base font for printing which applied to body
-    print:
+    menu: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei'"
+    label: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC'"
+    heading: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC'"
+    code: "SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace"
+    print: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC'"
 
   # Code Syntax Highlighting
   # Uses an architecture called "base16" (https://github.com/chriskempson/base16),
@@ -138,9 +124,9 @@ menu:
   Home: /
   关于: /about
   搜索: /search
+  音乐: /music
   # About: /about
   # Links: /links
-  Github: https://github.com/surespace1
 
 # Social media URL
 sns:
@@ -149,19 +135,23 @@ sns:
   # `youtube`, `hangouts`, `linkedin`, `pinterest`, `soundcloud`, `myspace`, `weibo`, `qq
   - icon: email
     title: Email
-    url: 3199455871@qq.com # default to `profile.email`
+    url: surespace.online # default to `profile.email`
+  - icon: github
+    title: Github
+    url: https://github.com/surespace1
   - icon: feed
     title: Feed
     url: # default to `hexo.config.feed.path`
 
   # custom icon
-  # - title: Email me
-  #   url: # default to `profile.email`
-  #   template: <i class="fa fa-github"></i>
-  # - title: Love you
-  #   url:
-  #   template: |
-  #     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+  - title: Email me
+    url: # default to `profile.email`
+    template: <i class="fa fa-github"></i>
+
+  - title: Love you
+    url:
+    template: |
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
 
 # Sidebar footer copyright info
 footer:
@@ -176,7 +166,7 @@ footer:
 
   # Custom text.
   custom: Hosted by <a target="_blank" rel="external nofollow"
-    href="https://pages.github.com/"><b>Github Pages</b></a>
+    href="https://github.com/surespace1/surespace1.github.io"><b>Github Pages</b></a>
 
 # ---------------------------------------------------------------
 # Content
@@ -234,37 +224,6 @@ search:
     per_page: 20
     limit: 10000
 
-  # Custom search
-  # adapter:
-  #   # Used for pagination
-  #   per_page: 10
-  #   # Optional
-  #   logo: //cdn.worldvectorlogo.com/logos/algolia.svg
-  #   request:
-  #     url: https://{APPLICATION_ID}-dsn.algolia.net/1/indexes/{INDEX}/query
-  #     method: post
-  #     # Available variables: :query, :per_page, :current
-  #     body: '{"query":":query","hitsPerPage":":per_page","page":":current"}'
-  #     headers:
-  #       X-Algolia-API-Key: {API_KEY}
-  #       X-Algolia-Application-Id: {APPLICATION_ID}
-  #       Content-Type: application/json; charset=UTF-8
-  #   keys:
-  #     # Used to retrieve result list
-  #     data: hits
-  #     # Used to retrieve current page number
-  #     current: page
-  #     # Used to retrieve total page number
-  #     total: nbPage
-  #     # Used to retrieve total hits number
-  #     hits: nbHits
-  #     # Used to retrieve cost time
-  #     time: processingTimeMS
-  #     # Used to retrieve title from per hit
-  #     title: _snippetResult.title.value
-  #     # Used to retrieve content from per hit
-  #     content: _snippetResult.content.value
-
 # ---------------------------------------------------------------
 # Content addons
 # ---------------------------------------------------------------
@@ -299,6 +258,11 @@ reward:
       url: https://paypal.me/imelmore
       text: This is a paypal payment link
       color: "#09bb07"
+    - name: wechat
+      qrcode: images\pay\zhifubao.jpg
+      url: https://www.paypal.me/imelmore
+      text: This is a wechat payment link
+      color: "#09bb07"
 
 # Copyright notice
 # It is possible to use front matter `copyright` to override this setting.
@@ -318,21 +282,22 @@ copyright:
   published: false
 
   # Display updated date, default to `false`
-  updated: false
+  updated: true
 
   # Custom text, override above settings
-  custom: my copyright
+  custom: "copyright：自由转载-非商用-禁止演绎-保持署名（CC BY-NC-ND 4.0）"
 
 # Comments
 # Built-in support Disqus (https://disqus.com) and LiveRe (https://livere.com),
 # for other comment system, see plugins
 comments:
+  enabled: true
   # disqus:
-  #   shortname: disqus_shortname
-  #   # Or you can set disqus script URL directly
-  #   script: //disqus_shortname.disqus.com/embed.js
-  #   # Autoload, default to `true`, set to `false` to display a button
-  #   autoload: false
+  #   shortname:
+  #   #   # Or you can set disqus script URL directly
+  #   script:
+  #   #   # Autoload, default to `true`, set to `false` to display a button
+  #   autoload: true
 
 # ---------------------------------------------------------------
 # Misc
@@ -414,8 +379,8 @@ pwa:
   #       type: image/png
   #       purpose: any
 
-# Plugins
-plugins:
+  # Plugins
+  # plugins:
   # Built-in plugins
   # - cipher:
   #     placeholder: Passcode is required
@@ -447,3 +412,116 @@ plugins:
   # template: <script>...</script>
   # Or a path relative to `hexo.base_dir`
   # template: snippets/snippet-1.html
+
+# 配置utterances评论系统
+plugins:
+  - position: comments
+    template: |
+      <div id="utterances-container" class="comments" style="margin-top: 2rem;"></div>
+      <script>
+        (function() {
+          var repo = 'surespace1/surespace1.github.io'; // 你的仓库
+          var issueTerm = 'pathname';
+
+          function loadUtterances() {
+            var container = document.getElementById('utterances-container');
+            if (!container) return;
+
+            // 1. 清空旧的评论（关键步骤，防止SPA跳转后评论叠加）
+            container.innerHTML = '';
+
+            // 2. 检测当前主题模式 (hexo-theme-inside 通常会在 html 或 body 上加 class，如果没有自动适配需求，可直接写死 'github-light')
+            // 这里简单检测是否有深色背景配置，或者直接使用 light
+            var theme = 'github-light';
+            // 如果你想适配深色模式，可以使用类似下面的判断（取决于主题如何切换类名）:
+            // if (document.body.classList.contains('dark-mode')) theme = 'github-dark';
+
+            var script = document.createElement('script');
+            script.src = 'https://utteranc.es/client.js';
+            script.setAttribute('repo', repo);
+            script.setAttribute('issue-term', issueTerm);
+            script.setAttribute('theme', theme);
+            script.setAttribute('crossorigin', 'anonymous');
+            script.setAttribute('async', '');
+
+            container.appendChild(script);
+          }
+
+          // 首次加载
+          loadUtterances();
+
+          // 监听 theme-inside 的内部路由跳转事件
+          document.addEventListener('inside', function(e) {
+            // 只有在路由切换(route)或主题更新(theme)时才重新加载
+            if (e.detail.type === 'route' || e.detail.type === 'theme') {
+              // 稍微延迟以确保 DOM 已经渲染
+              setTimeout(loadUtterances, 300);
+            }
+          });
+        })();
+      </script>
+
+  - position: [post, page]
+    template: |
+      <script>
+        (function() {
+          function updatePV() {
+            var path = location.pathname;
+
+            // -------------------------------------------------------------
+            // 步骤1：准备发给 API 的 Key (为了 API 必须安全，不带斜杠)
+            // -------------------------------------------------------------
+            var apiPath = path;
+            if (apiPath !== '/' && apiPath.endsWith('/')) apiPath = apiPath.slice(0, -1);
+            if (apiPath === '/') apiPath = 'index';
+            // 将斜杠换成下划线，作为 CounterAPI 的唯一标识
+            var safeKey = apiPath.replace(/\//g, '_');
+            var namespace = 'surespace1blog';
+            var apiUrl = 'https://api.counterapi.dev/v1/' + namespace + '/' + safeKey + '/up';
+
+            // -------------------------------------------------------------
+            // 步骤2：准备发给主题的 Key (必须为了匹配主题内部逻辑)
+            // -------------------------------------------------------------
+            // 关键点 A: 解码 (把 %E5 变回中文)
+            var themePath = decodeURIComponent(location.pathname);
+
+            // 关键点 B: 去掉开头的斜杠 (主题通常存储的是 'posts/...' 或 '2025/...')
+            if (themePath.startsWith('/')) {
+              themePath = themePath.substring(1);
+            }
+
+            // 关键点 C: 确保去掉末尾斜杠 (为了严谨匹配)
+            if (themePath.endsWith('/')) {
+              themePath = themePath.substring(0, themePath.length - 1);
+            }
+
+            console.log('[Theme Inside] 请求API:', safeKey);
+            console.log('[Theme Inside] 主题匹配Key:', themePath);
+
+            fetch(apiUrl)
+              .then(res => res.json())
+              .then(data => {
+                console.log('[Theme Inside] 获取成功:', data.count);
+
+                // 发送给主题
+                document.dispatchEvent(
+                  new CustomEvent('inside', {
+                    detail: {
+                      type: 'pv',
+                      data: {
+                        [themePath]: data.count // 这里使用处理好的中文 Key
+                      },
+                    },
+                  })
+                );
+              })
+              .catch(err => console.error(err));
+          }
+
+          updatePV();
+
+          document.addEventListener('inside', function(e) {
+            if (e.detail.type === 'route') setTimeout(updatePV, 300);
+          });
+        })();
+      </script>

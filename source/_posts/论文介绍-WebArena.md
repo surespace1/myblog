@@ -1,6 +1,6 @@
 ---
 title: '论文介绍:WebArena'
-date: 2023-12-09 10:40:56
+date: 2025-12-09 10:40:56
 tags: paper reading
 categories: paper
 ---
