@@ -28,7 +28,7 @@
     "hexo-theme-inside": "^2.7.2",
     "hexo-theme-landscape": "^1.0.0",
     "html-to-text": "^9.0.5",
-    "markdown-it": "^14.1.0",
+    "markdown-it": "^14.1.1",
     "markdown-it-container": "^4.0.0"
   }
 }
